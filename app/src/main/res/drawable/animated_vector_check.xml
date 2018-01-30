@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:aapt="http://schemas.android.com/aapt"
+  android:drawable="@drawable/vector_path_check">
+  <!--<target-->
+  <!--android:name="tick"-->
+  <!--android:animation="@anim/check_animation" />-->
+
+  <target android:name="check_path">
+    <aapt:attr name="android:animation">
+      <set
+          android:interpolator="@android:anim/accelerate_interpolator"
+          android:ordering="sequentially"
+          android:shareInterpolator="false">
+        <!-- First animation, the short backward slash part of the check, \ -->
+        <objectAnimator
+            android:duration="@android:integer/config_shortAnimTime"
+            android:propertyName="pathData"
+            android:valueFrom="M6,10 l0,0 l0,0"
+            android:valueTo="M6,10 l4,4.5 l0,0"
+            android:valueType="pathType" />
+
+        <!-- Second animation, the long forward slash part of the check, / -->
+        <objectAnimator
+            android:duration="@android:integer/config_shortAnimTime"
+            android:propertyName="pathData"
+            android:valueFrom="M6,10 l4,4.5 l0,0"
+            android:valueTo="M6,10 l4,4.5 l9,-8"
+            android:valueType="pathType" />
+      </set>
+    </aapt:attr>
+</target>
+
+</animated-vector>
+<!-- In a 24 by 24 space, the origin 0,0 is at the top left corner, going right will increase the x value, going down will increase the y value -->
+<!-- Mx,y means start at x,y-->
+<!-- lx,y means draw a line from the current coordinate to the position specified by x,y -->
+<!-- The lower case lx,y means move from the current coordinate by x and y and draw the line  -->
+<!-- The upper case Lx,y means move from the origin 0, 0 -->
+<!-- C x1,y1 x2,y2 x,y means draw a cubic bezier curve to (x,y) using control points (x1,y1) and (x2,y2)-->
+<!-- Z Close the path by drawing a line back to the beginning of the current subpath. -->
+<!-- M6,10 l4,4.5 l0,0 means starting at point 6,10 then draw a line to the point which is obtained by increase x by 4 and y by 4.5, and the thrid command l0,0 means stay at the current position -->
+<!-- M6,10 l4,4.5 l9,-8 means starting at point 6,10 then draw a line to the point which is obtained by increase x by 4 and y by 4.5, and then draw another  line to the point which is obtained by increase x by 9 and decrease y by -8 -->

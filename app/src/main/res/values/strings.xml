@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Check Animation</string>
+
+    <string name="path_check">M6,11 l3.5,4 l8,-7</string>
+    <string name="path_cross">M6,6 l10,10 M16,6 l-10,10</string>
+
+</resources>

@@ -1,0 +1,47 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:id="@+id/check"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/animated_vector_check"/>
+
+        <ImageView
+            android:id="@+id/cross"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/animated_vector_cross"/>
+        <Button
+            android:id="@+id/btn_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/check"
+            android:text="check"
+            android:onClick="checkAnimation"/>
+        <Button
+            android:id="@+id/btn_cross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/check"
+            android:layout_toRightOf="@+id/btn_check"
+            android:text="cross"
+            android:onClick="crossAnimation"/>
+    </RelativeLayout>
+
+</RelativeLayout>
